@@ -1,0 +1,11 @@
+docker-compose up
+docker exec -it <db container> bash
+
+# in container
+cd backups/sakila-db
+mysql -u root -p < sakila-schema.sql
+mysql -u root -p < sakila-data.sql
+mysql -u root -p sakila
+# in container
+
+docker-compsoe down
